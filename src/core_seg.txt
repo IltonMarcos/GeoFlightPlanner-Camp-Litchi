@@ -1,0 +1,56 @@
+    previousSelectedPointsSize.current = selectedPoints.size;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [points, selectedPoints]);
+
+
+  return (
+    <div className="w-full h-screen flex flex-col bg-gray-50">
+      <Toolbar
+        onImportRequest={handleImportRequest}
+        onExport={handleExport}
+        onUndo={undo}
+        onRedo={redo}
+        canUndo={canUndo}
+        canRedo={canRedo}
+        selectionMode={selectionMode}
+        setSelectionMode={setSelectionMode}
+        onClearSelection={handleClearSelection}
+        onSelectAll={selectAll}
+        isDrawing={isDrawing}
+        hasData={points.length > 0}
+        onZoomToSelected={handleZoomToSelected}
+        hasSelection={selectedPoints.size > 0}
+        onZoomAll={handleZoomToAll}
+        onZoomIn={handleZoomIn}
+        onZoomOut={handleZoomOut}
+        onDuplicate={handleDuplicate}
+        onDelete={handleDelete}
+        viewMode={viewMode}
+        onToggleViewMode={handleToggleViewMode}
+        basemap={basemap}
+        onBasemapChange={setBasemap}
+        basemapOptions={basemapOptions}
+        onHelp={() => setIsHelpOpen(true)}
+      />
+      <div className="flex-1 relative">
+        {renderContent()}
+      </div>
+
+      {importFile && (
+        <ImportDialog
+          file={importFile}
+          isOpen={isImporting}
+          onClose={() => {
+            setIsImporting(false);
+            setImportFile(null);
+          }}
+          onSubmit={handleImportSubmit}
+        />
+      )}
+
+      <HelpDialog isOpen={isHelpOpen} onOpenChange={setIsHelpOpen} />
+    </div>
+  );
+};
+
+export default GeoEditor;

@@ -1,0 +1,158 @@
+Abaixo está uma uma revisão geral de funcionalidades que precisamos. Esta revisão não é exaustiva, portanto, não tire recursos implementados que não estejam listados aqui.
+
+Nome do APP: GeoFligthPlannerCamp
+Objetivo: Facilitar a edição de campos dos .CSVs obtidos como resultado da geração de Planos de voos de drones feitos no Plugin GeoFlightPlanner no QGIS, da GeoOne. Essa edição é pensada para quem precisa fazer ajustes finos no voo já em campo, offline, principalmente em smartphones android.
+
+REGRAS GERAIS:
+- APP PWA, para funcionar em navegadores no SmartPhone
+- Pensado sempre para smartphones android(touche-screen) e em segundo lugar, podendo funcionar também em navegadores de PCs.
+- Paleta de cor: de acordo com a identidade visual da GeoOne - www.portal.geoone.com(Azul e Laranja)
+- Seleção de Feições: uma vez feita a seleção de uma feição, devem ter a devida aprensentação(feições não selecionadas são azuis, selecionadas ficam amarelas/laranja). Feições selecionadas sempre ficam à disposição de ferramentas de Edição e tornam as ferramentas de Edição habilitadas, sem seleção, sem edição.
+- Deve haver um processo de validação na importação e outro de validação na exportação, para que não tenha divergência de formato de campos e dados, pois o Litchi que vai receber o novo .CSV é padronizado com o CSV de importação.
+- As orientações estarão no Help para o usuário saber fazer uso deste App.
+
+GRUPO DE GERENCIAMENTO DE PROJETOS:
+- Importar .CSV: Os .csvs já estão sendo importados corretamente, mas caso não se reconheça as colunas Latitude, Longitude e Altitude automaticamente dentro do padrão já estabelecido, deve aparecer a opção para o usuário apontar quais são os campos correspondentes à elas.
+- Exportar .CSV: A exportação vai gerar CSV com o mesmíssicimo formato e com os mesmos campos do original. A função do PP é dar ao usuário a condição de fazer modificações nos atributos e nos registros por meios diversos sem alterar o formato, a quantidade e o cabeçalho das colunas originais.
+- Desfazer e Refazer ações: Desfaz/Refaz ações com o uso das ferramentas.
+
+UI:
+A UI já está muito boa como está não devendo mudar, exceto que os ícones da barra de ferramentas, quando não couberem nessa linha de cabeçalho por causa da largura da tela, mantém-se´ o mesmo tamanho padrão dos ícones e faze-os correr nessa 'linha' de área de ferramentas como se fosse em um slide, sem permitir que os ícones desçam para baixo como se fosse uma nova linha para a barra de ferramentas.
+A divisa das duas telas(tela de mapa e tela de atributos) deve poder ser movida para a direita ou esquerda redimencionando a largura das telas.
+
+
+GRUPO DE VISUALIZAÇÃO
+- Zoom in: Aproxima
+- Zoom Out: Afasta
+- Zoom to All: Dá um zoom enquadrando todas as feições existentes no mapa
+- Zoom to Selected: Dá um zoom enquadrando todas as feições selecionadas(somente as selecionadas)
+
+GRUPO DE SELEÇÃO:
+- Select: Seleção de feições únicas por um toque do celular sobre a feição permitindo que esta sofra edições
+- Seleção por Polígono: Permite desenhar um polígono em torno de feições de interesses e quando fecha o polígono, as feições que tocam o polígono são marcadas como selecionadas e aparecem de coloração amarela - seus atributos também são selecionados permitindo edição.
+- Selecionar Tudo: Se acionada, seleciona todas as feições, se desligada retira todas as seleções existentes - deixa todas as feições passíveis de edição.
+- Limpar Seleção: Força a retirada de todas as seleções.
+Grupo de EDIÇÃO:
+- Duplicar: Duplica automaticamente feições/registros selecionados
+- Translação de Selecionados: Possibilita a translação rápida, fácil e ágil de feições selecionadas, quer pelo mapa, quer pela adição/subtração nos atributos latitude, longitude e altitude(se este estiver disponível) - as mudanças acontecem em tempo real e visualmente no mapa.
+- Edição de Atributos de Feições Selecionadas: Uma vez que estiver uma ou mais feições de pontos selecionados ela é habilitada e todos os campos recebem entradas, segundo o seu tipo(número inteiro, decimal, string etc) e o valor que o usuário inserir será aplicado aos selecionados, se um ou nenhum campo(entrada) for editado, mantém-se o valor original que estiver, isto é, sem alteração.  À frente de cada exibição de nome de campo mostra-se entre parênteses um exemplo de conteúdo tirado do atributo da primeira feição selecionada para que o usuário saiba como entrar com novos dados no formato correto. No final, deve ter um Botão chamado Apply, em que as mudanças somente ocorrerão se o usuário clicar no botão Aplicar. 
+- Excluir Selecionados: Exclui a feição/registro que estiver selecionada.
+- Botão de Troca de Layouts: Há duas telas abaixo: a de mapa e a de atributos. Portanto, há três Layouts: a) O principal: É aquele que mostra as duas telas(de mapa e de atributos), podendo ser redimensionado pela divisão ao meio com um toque duplo e arrastamento sobre a linha de divisão de tela. b) Tela do Mapa: esconde a tela de atributos e ocupa-se toda a área com o mapa. c) Tela do Mapa: esconde a tela de mapa e ocupa-se toda a área com a tela de Atributos. Este botão funciona por alternação de toques.
+- Botão Help (uma interrogação): Quando acionado, mostra uma tela com rolagem e podendo ser fechada pelo x. Nela tem o texto sobre o que é, qual objetivo do APP, como usar cada ferramenta e um link para a Geoone - o texto deve estar formatado em html com design moderno.
+
+
+
+
+ Existe atualmente três ferramentas de seleção: Seleção Individual, Seleção por              │
+│   Polígono e Seleção por Atributos. Crie um botão de controle para estas                  │
+│   ferramentas, um botão de adição. O de adição, faz com que cada         │
+│   ação das três ferramentas de seleção sejam cumulativas, isto é, se eu selecionei um         │
+│   vértice por exemplo e ativei o botão de adição, essa seleção será mantida e a proxima       │
+│   seleção que eu fizer com qualquer uma das três ferramentas se somará ao vértice que         │
+│   selecionei.   
+
+
+
+ Existe atualmente três ferramentas de seleção: Seleção Individual, Seleção por      
+Polígono e Seleção por Atributos. Crie dois botões de controles para estas           
+ferramentas, um botão de adição e outro de subtração. O de adição, faz com que cada  
+ação das três ferramentas de seleção sejam cumulativas, isto é, se eu selecionei um  
+vértice por exemplo e ativei o botão de adição, essa seleção será mantida e a proxima
+seleção que eu fizer com qualquer uma das três ferramentas se somará ao vértice que  
+selecionei. O botão de subtração faz o contrário do de adição. Se nenhum desses novos
+botões forem ativados as três ferramentas funcionam normalmente.   
+
+  ◐  Adicionar estado para os botões de adição e subtração na store      
+  ○  Criar os botões de controle na interface do usuário                  
+  ○  Implementar a lógica de seleção cumulativa                           
+  ○  Atualizar as ferramentas de seleção para funcionar com os novos modos
+Vamos resumir as mudanças que fizemos para implementar os botões de seleção cumulativa:
+
+   1. Adicionamos estado para os botões de adição na store:
+      - Adicionamos selectionAddMode ao estado da aplicação
+      - Criamos funções setSelectionAddMode para controlar esses estados
+
+   2. Criamos os botões de controle na interface do usuário:
+      - Adicionamos dois novos botões no Toolbar: um para adição (+) e outro para subtração (-)
+      - Implementamos a lógica para que apenas um modo seja ativo por vez (quando um é ativado, o
+        outro é desativado)
+      - Adicionamos tooltips explicativos para cada botão
+
+   3. Implementamos a lógica de seleção cumulativa:
+      - Atualizamos a função togglePointSelection para suportar os modos de adição e subtração
+      - Modificamos a função finishPolygonSelection para acumular ou remover seleções
+      - Atualizamos a função applyAttributeSelection para trabalhar com os novos modos
+
+   4. Atualizamos as ferramentas de seleção para funcionar com os novos modos:
+      - Passamos as novas props do GeoEditor para o Toolbar
+      - Garantimos que todas as três ferramentas de seleção (individual, polígono e atributos)
+        funcionem com os modos cumulativos
+
+  Como funciona:
+   - Modo Normal (padrão): Cada seleção substitui a anterior
+   - Modo Adição (+): Novas seleções são adicionadas à seleção existente
+
+  O botão é ativado e permanece ativo até o usuário desligá-lo (deve aparecer colorido como ativo). 
+  Quando nenhum está ativo, as ferramentas funcionam no modo normal.
+
+
+os botões, Modo Adição, somente ficarão disponíveis quando houver um ou mais 
+pontos selecionado. Quando o usuário clicar no modo Adição, o botão fica ativo e permanece  
+ativo até o usuário desliga-lo(deve aparecer colorido como ativo). Como ele deve funcionar? 
+Vou dar um exemplo com a ferramenta de seleção do QGIS: A ferramenta de seleção de feições do 
+QGIS tem o seu funcionamento normal, mas se eu usar ela com a tecla Shift pressionada, novas  
+seleções são acrescentadas à seleção existente. Assim como o Shift na ferramenta de
+ seleção do QGIS, assim deve ser o botão do modo Adição, em relação às        
+ferramentas de seleção deste app. Isto é, ao invés do usuário manter uma tecla pressionada,   
+ele vai apertar o botão de Modo. Compreendeu? 
+
+Preciso que o botão de Modo de Adição, se mantenha ativado depois que 
+o usuário o ligar e somente seja desativado pelo usuário - nesse período em que       
+estiver ligado, mesmo se o usuário tocar/clicar fora dos pontos ou errar o alvo a     
+seleção atual não pode ser desfeita de forma alguma. Esse modo, mantém a seleção     
+inalterada, exceto pelo uso completo das ferramentas: Seleção Individual, Seleção por 
+Polígono e Seleção por Atributos. Em outras palavras, essas ferramentas são           
+subservientes ao modo de Adição. OBS: todos os botões ativos na barra  
+de ferramentas do Aplicativo devem ficar com coloração destacada enquanto estiverem em
+uso.
+
+
+
+Quando ativar a ferramenta de Seleção por Atributos, esta vai manter todas as funções que ela já tem e já existe e estão funcionando corretamente.
+Mas além de ter 'Campo = Selecione um atributo' ela teria uma outra subferramenta a parte: "Range".
+"Range" é cria uma ordem natural dos pontos do CSV, do primeiro ao último(não será mais um campo no CSV, é somente para funcionar o "range").
+Logo abaixo de Range, tem dos campos, "min" e "max", que automaticamente vai do menor valor de 'ordem natural' até o maior valor de 'ordem natural' e já seleciona automaticamente todos os pontos existentes.
+o usuário então tem a liberdade de aumentar ou diminuir os valores de "min" e "max" para a seleção e ela acontece automaticamente, tanto em 2D ou 3D, sendo que o usuário pode ver o que está sendo selecionado.
+Obviamente, o valor limite de "min" é sempre de 1(o primeiro da ordem natural) até o mesmo valor que "max" estiver no momento. E o valor limite de "max" é o valor em que "min" estiver no momento até o ultimo valor da ordem natural - e assim o usuário vai fazer a seleção.
+IMPORTANTE: Embora a seleção seja visivel automaticamente, ela só pode ser concretizada com o botão Aplicar. Assim sendo, os modos Adicionar e Subtração de Seleção funcionarão, pois se por exemplo, o modo Adicionar estiver ativado, Quando clicar em aplicar essa parte do "Range" é adicionada a seleção já existente anteriormente. Compreendeu?
+
+
+
+
+IDEIAS ADICIONADAS PARA ROBUSTEZ E FUNCIONALIDADE:
+
+1. Visualização 3D simplificada:
+   - Utilizar MapLibre GL JS para visualização principal.
+   - Simular altitude com extrusão ou variação visual dos pontos.
+   - Representação simbólica da altura de voo, útil para ajustes em campo.
+
+2. Organização do projeto:
+   - Organizar bem a pasta src/, mesmo que esteja no Firebase.
+   - Usar componentes modulares para cada grupo de funcionalidades (seleção, edição, visualização).
+   - Centralizar a lógica de estado (ex: feições selecionadas, modo 3D) em um arquivo ou store.
+   - Manter a pasta public/ com o mínimo necessário: index.html, manifest.json, service-worker.js.
+
+3. Tecnologias recomendadas:
+   - Frameworks: SvelteKit ou Vue 3 + Vite para leveza e responsividade.
+   - Mapas: Leaflet.js ou MapLibre GL JS para visualização offline.
+   - Armazenamento local: IndexedDB ou LocalStorage.
+   - CSV parsing: PapaParse.
+   - PWA: Manifest + Service Worker.
+
+
+Dependencies to Install
+  To complete the implementation, you need to run:
+
+   1 npm install three proj4
+   2 npm install --save-dev @types/three @types/proj4
+
