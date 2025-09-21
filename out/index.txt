@@ -1,0 +1,21 @@
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+4:I[9156,["965","static/chunks/965-073c4620a27015c4.js","177","static/chunks/app/layout-5ef7790195d7b7ff.js"],"Toaster"]
+5:I[228,["965","static/chunks/965-073c4620a27015c4.js","177","static/chunks/app/layout-5ef7790195d7b7ff.js"],"default"]
+6:I[8888,["600","static/chunks/05f6971a-48be78485d44bd5b.js","668","static/chunks/89374596-3d0bbbea6650b157.js","965","static/chunks/965-073c4620a27015c4.js","382","static/chunks/382-dd68ed728ccfdc4b.js","974","static/chunks/app/page-454b8a32bb71dce1.js"],"default"]
+7:I[9665,[],"MetadataBoundary"]
+9:I[9665,[],"OutletBoundary"]
+c:I[4911,[],"AsyncMetadataOutlet"]
+e:I[9665,[],"ViewportBoundary"]
+10:I[6614,[],""]
+:HL["/GeoFlightPlanner-Camp-Litchi/_next/static/css/3e8d2aa0959492de.css","style"]
+0:{"P":null,"b":"p5uyTok61AcA3JsVJW-N0","p":"/GeoFlightPlanner-Camp-Litchi","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/GeoFlightPlanner-Camp-Litchi/_next/static/css/3e8d2aa0959492de.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"/GeoFlightPlanner-Camp-Litchi/maplibre-gl.css","rel":"stylesheet"}],["$","meta",null,{"name":"theme-color","content":"#2563EB"}],["$","meta",null,{"name":"mobile-web-app-capable","content":"yes"}],["$","meta",null,{"name":"apple-mobile-web-app-capable","content":"yes"}],["$","meta",null,{"name":"apple-mobile-web-app-status-bar-style","content":"default"}],["$","link",null,{"rel":"apple-touch-icon","href":"/GeoFlightPlanner-Camp-Litchi/apple-touch-icon.png"}]]}],["$","body",null,{"className":"font-body antialiased","children":[["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","html",null,{"lang":"en","children":["$","body",null,{"style":{"fontFamily":"PT Sans, Arial, Helvetica, sans-serif","display":"flex","alignItems":"center","justifyContent":"center","minHeight":"100vh","background":"#0f172a","color":"white"},"children":["$","div",null,{"style":{"textAlign":"center"},"children":[["$","h1",null,{"style":{"fontSize":48,"marginBottom":12},"children":"404"}],["$","p",null,{"style":{"fontSize":18,"opacity":0.8},"children":"Page not found."}]]}]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L4",null,{}],["$","$L5",null,{}]]}]]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L6",null,{}],["$","$L7",null,{"children":"$L8"}],null,["$","$L9",null,{"children":["$La","$Lb",["$","$Lc",null,{"promise":"$@d"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","akGKJeC4iLG49fPAvtc75",{"children":[["$","$Le",null,{"children":"$Lf"}],null]}],null]}],false]],"m":"$undefined","G":["$10","$undefined"],"s":false,"S":true}
+11:"$Sreact.suspense"
+12:I[4911,[],"AsyncMetadata"]
+8:["$","$11",null,{"fallback":null,"children":["$","$L12",null,{"promise":"$@13"}]}]
+b:null
+f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+a:null
+13:{"metadata":[["$","title","0",{"children":"GeoFlightPlannerCamp"}],["$","meta","1",{"name":"description","content":"Import, edit, and export geospatial CSV data for drone flight plans."}],["$","link","2",{"rel":"manifest","href":"/GeoFlightPlanner-Camp-Litchi/manifest.webmanifest","crossOrigin":"$undefined"}],["$","link","3",{"rel":"icon","href":"/GeoFlightPlanner-Camp-Litchi/favicon.ico","type":"image/x-icon","sizes":"16x16"}]],"error":null,"digest":"$undefined"}
+d:{"metadata":"$13:metadata","error":null,"digest":"$undefined"}
