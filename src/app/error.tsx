@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { useEffect } from "react"
 
 export default function Error({
   error,
@@ -9,6 +10,12 @@ export default function Error({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  useEffect(() => {
+    // Log the real error to the console for diagnostics in production
+    // This helps identify the root cause behind the friendly error UI
+    // eslint-disable-next-line no-console
+    console.error("App error:", error)
+  }, [error])
   return (
     <div className="w-full h-screen flex items-center justify-center p-6 bg-background">
       <div className="max-w-md text-center space-y-4">
@@ -29,4 +36,3 @@ export default function Error({
     </div>
   )
 }
-
