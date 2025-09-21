@@ -1,10 +1,5 @@
-// Client-only render to avoid hydration issues with browser APIs
-import dynamic from "next/dynamic";
-
-const GeoEditor = dynamic(() => import("@/components/core/GeoEditor"), {
-  ssr: false,
-});
+import ClientOnlyEditor from "./ClientOnlyEditor";
 
 export default function Home() {
-  return <GeoEditor />;
+  return <ClientOnlyEditor />;
 }
