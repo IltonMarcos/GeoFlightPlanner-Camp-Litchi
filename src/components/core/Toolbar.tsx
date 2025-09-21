@@ -2,7 +2,7 @@
 "use client";
 
 import type { FC, ChangeEvent } from 'react';
-import { Upload, Download, Undo2, Redo, Square, Maximize, ZoomInIcon, ZoomOutIcon, Copy, Trash2, Rows, Columns, PanelRight, MoveIcon, Eraser, ClipboardEdit, Layers, MousePointer } from 'lucide-react';
+import { Upload, Download, Undo2, Redo, Square, Maximize, ZoomIn as ZoomInIcon, ZoomOut as ZoomOutIcon, Copy, Trash2, Rows, Columns, PanelRight, Move as MoveIcon, Eraser, ClipboardEdit, Layers, MousePointer } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip';
